@@ -9978,6 +9978,16 @@ body{
 	overflow-y:auto;
 	max-height : 100%;
 	}
+	
+	.btn-primary,
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:visited,
+.btn-primary:focus {
+    background-color: #e74c3c;
+    border-color: #c0392b;
+}
+
 
 #footer{
 	background:#333333;

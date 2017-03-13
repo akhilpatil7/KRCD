@@ -4,11 +4,11 @@
 
     $username = "root";
 
-    $password = "";
+    $password = "aki123";
 
     $host = "localhost";
 
-    $dbname = "logind";
+    $dbname = "clientinfo";
 require 'PHPMailer/PHPMailerAutoload.php';
 
 $mail = new PHPMailer;
@@ -85,8 +85,8 @@ if (isset($_POST["ForgotPassword"])) {
 
         $pwrurl = "http://localhost:1234/test/changepass.php?q=".$code;
         //save it to database
-        $con=mysqli_connect("localhost","root","") or die("cannot connect");
-        mysqli_select_db($con,"logind") or die("can not connect to db");
+        $con=mysqli_connect("localhost","root","aki123") or die("cannot connect");
+        mysqli_select_db($con,"clientinfo") or die("can not connect to db");
         $query=mysqli_query($con,"update login set q='$code' where email='$email'");
         
         //mew mail module
@@ -124,20 +124,31 @@ if (isset($_POST["ForgotPassword"])) {
 
          if(!$mail->send()) {
     var_dump($mail->send());
-    echo 'Message could not be sent.';
-    echo 'Mailer Error: ' . $mail->ErrorInfo;
-    echo 'debug info'.$mail->SMTPDebug = 2;;
+	
+	$e1 =  $mail->ErrorInfo;
+	$e2 =  $mail->SMTPDebug = 2;
+	
+    #echo 'Message could not be sent.';
+    #echo 'Mailer Error: ' . $mail->ErrorInfo;
+    #echo 'debug info'.$mail->SMTPDebug = 2;
+	header("Location: http://localhost/test/krcd/home.php?a=0&$e1&$e2");
         } 
     else {
-        echo 'Message has been sent';
+		
+		header("Location: http://localhost/test/krcd/home.php?a=1");
+        #echo '<a href="home.php?a=1">Message has been sent</a>'; 
+			
+			
         }
 
     }
 
     else
-
-        echo "No user with that e-mail address exists.";
+		header("Location: http://localhost/test/krcd/home.php?a=2");
+        #echo "No user with that e-mail address exists.";
+		
 
 }
+
 
 ?>

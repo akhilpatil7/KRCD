@@ -1,8 +1,8 @@
 <?php 
 $code = $_GET['q'];
 $email=$_GET['u'];
- $con=mysqli_connect("localhost","root","") or die("cannot connect");
-        mysqli_select_db($con,"logind") or die("can not connect to db");
+ $con=mysqli_connect("localhost","root","aki123") or die("cannot connect");
+        mysqli_select_db($con,"clientinfo") or die("can not connect to db");
         $query=mysqli_query($con,"select q from login where email='$email'");
         if(mysqli_fetch_row($query))
         {	echo "

@@ -35,7 +35,7 @@ while ($row=mysql_fetch_assoc($query)) {
 		}
 		else
 		{	
-			header("Location: http://localhost/test/client.php");
+			header("Location: http://localhost/test/krcd/client.php");
 		exit();
 		//echo "you are welcome CLICK <a href='member.php'>HERE</a> TO upload " .$demail." ".$dsu;
 	}

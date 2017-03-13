@@ -143,9 +143,23 @@ Chairman & Managing Director.</p><br><br>
 </div>
 </div>
 
+<?php 
+				
+	if($_GET['a']== '1'){ echo" <script type='text/javascript'>alert('Message has been sent | Check Your Email');</script> " ;}
+			
+	elseif($_GET['a']== '0'){
+		
+		$e1 = $_GET['e1'];
+		$e2 = $_GET['e2'];
+		echo" <script type='text/javascript'>alert(' Message could not be sent .$e1 <br> .$e2 ');</script> " ;
+		
+		}		
+	elseif($_GET['a']== '2'){ echo" <script type='text/javascript'>alert('No user with that e-mail address exist | Enter Correct Email Id and try again ');</script> " ;}		
+			
+			
+			?>
 
-
-    <!-- Modal -->
+    <!-- Modal 1 -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -170,10 +184,11 @@ Chairman & Managing Director.</p><br><br>
       </div>
       <div class="modal-footer">
       
-      	<a class ="btn btn-default btn-primary"  href="registerer.php?il=0">Register</a>
-		<a class ="btn btn-default btn-primary" href="forgot.php">Forgot Password</a>
+      	<a class ="btn btn-default btn-primary" style=" background-color:#e74c3c ; border-color:#c0392b" href="registerer.php?il=0">Register</a>
+		
+        <button  type="button" class="btn btn-default btn-primary" style=" background-color:#e74c3c ; border-color:#c0392b" data-target="#forgotpass" data-toggle="modal">Forgot Password</button>
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <input class ="btn btn-default btn-primary " type="submit" value="LOGIN">
+        <input class ="btn btn-default btn-primary " style=" background-color:#e74c3c ; border-color:#c0392b" type="submit" value="LOGIN">
         
         
       </div>
@@ -182,6 +197,32 @@ Chairman & Managing Director.</p><br><br>
   </div>
 </div>
 
+
+ <!-- Modal 2 -->
+<div class="modal fade" id="forgotpass" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">CHANGE&nbsp; YOUR &nbsp; YOUR &nbsp; PASSWORD</h4>
+      </div>
+      <div class="modal-body">
+      <!--FORM FOR UPLOAD -->
+            <form class="form-group" action="forgotpass.php" method="POST" enctype="multipart/form-data">
+            <b>Enter Your Email </b><input class="form-control" type="text" name="email"><br>
+           
+            <input class="form-control btn btn-default btn-primary" style=" background-color:#e74c3c ; border-color:#c0392b" type="submit" name="ForgotPassword" value="Request Reset">	
+            
+            
+            
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
 
 <!--footer-->
 <footer id="footer">

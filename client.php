@@ -47,7 +47,7 @@
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <li class="active"><a href="#">Dashboard</a></li>
-            <li><a href="#about">Work History</a></li>
+            <li><a href="http://localhost/test/logout.php">Change Password</a></li>
           </ul>
           
           <ul class="nav navbar-nav  navbar-right">
@@ -113,12 +113,12 @@
 							while($row = mysqli_fetch_array($search_result)):?>
                             <tr>
                             	
-                            	<td><?php if(!isset($_SESSION['username'])) {echo $row['id'];}?></td>
-                                <td><?php echo $row['username'];?></td>
-                                <td><?php echo $row['email'];?></td>
-                                <td><?php echo $row['filename'];?></td>
-								<td><?php echo $row['time'];?></td>
-								<td><?php echo $row['ETA'];?></td>
+                            	<td><?php if(!isset($_SESSION['username'])) { 	 header("Location: http://localhost/test/krcd/home.php");}echo $row['id'];?></td>
+                                <td><?php if(!isset($_SESSION['username'])) { 	 header("Location: http://localhost/test/krcd/home.php");} echo $row['username'];?></td>
+                                <td><?php if(!isset($_SESSION['username'])) { 	 header("Location: http://localhost/test/krcd/home.php");} echo $row['email'];?></td>
+                                <td><?php if(!isset($_SESSION['username'])) { 	 header("Location: http://localhost/test/krcd/home.php");} echo $row['filename'];?></td>
+								<td><?php if(!isset($_SESSION['username'])) { 	 header("Location: http://localhost/test/krcd/home.php");} echo $row['time'];?></td>
+								<td><?if(!isset($_SESSION['username'])) { 	 header("Location: http://localhost/test/krcd/home.php");}php  echo $row['ETA'];?></td>
                             </tr>	
 							<?php endwhile;
 							 ?>
