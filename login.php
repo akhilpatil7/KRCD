@@ -28,7 +28,7 @@ while ($row=mysql_fetch_assoc($query)) {
 		$_SESSION['email']=$demail;
 		if ($dsu==1) {
 			//redirect to user page
-			header("Location: http://localhost:1234/test/adminlogin.php");
+			header("Location: http://localhost:1234/test/adtest.php");
 			exit();
 
 		//echo "you are welcome CLICK <a href='adminlogin.php'>HERE</a> TO download " .$demail." ".$dsu;	
