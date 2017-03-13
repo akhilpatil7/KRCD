@@ -1,11 +1,10 @@
-
-     
-
 <?php
 
 	session_start();
 	$var_value = $_SESSION['username'];
 	
+	
+								
 	$query = "SELECT * FROM `uploads` where username LIKE '%$var_value%' ";
 	$search_result = filterTable($query);
 	
@@ -22,6 +21,7 @@
 
 <html lang="en">
   <head>
+  
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1"> 
@@ -29,6 +29,7 @@
       <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+
   </head>
 
   <body>
@@ -108,17 +109,21 @@
                                 <th> Time</th>
                                 <th> ETA </th>
                             </tr>
-							<?php 
 							
+							
+							 <?php
+ 
+							  
+
 							while($row = mysqli_fetch_array($search_result)):?>
                             <tr>
                             	
-                            	<td><?php if(!isset($_SESSION['username'])) {echo $row['id'];}?></td>
-                                <td><?php echo $row['username'];?></td>
-                                <td><?php echo $row['email'];?></td>
-                                <td><?php echo $row['filename'];?></td>
-								<td><?php echo $row['time'];?></td>
-								<td><?php echo $row['ETA'];?></td>
+                            	<td><?php if(!isset($_SESSION['username'])) { 	 header("Location: 										http://localhost/test/krcd/home.php");}; echo $row['id'];?></td>
+                                <td><?php if(!isset($_SESSION['username'])) { 	 header("Location: http://localhost/test/krcd/home.php");}; echo $row['username'];?></td>
+                                <td><?php if(!isset($_SESSION['username'])) { 	 header("Location: http://localhost/test/krcd/home.php");}; echo $row['email'];?></td>
+                                <td><?php if(!isset($_SESSION['username'])) { 	 header("Location: http://localhost/test/krcd/home.php");}; echo $row['filename'];?></td>
+								<td><?php if(!isset($_SESSION['username'])) { 	 header("Location: http://localhost/test/krcd/home.php");}; echo $row['time'];?></td>
+								<td><?php if(!isset($_SESSION['username'])) { 	 header("Location: http://localhost/test/krcd/home.php");}; echo $row['ETA'];?></td>
                             </tr>	
 							<?php endwhile;
 							 ?>
