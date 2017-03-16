@@ -47,12 +47,20 @@
     		<div class="col-md-10">
             <h1><span class="glyphicon glyphicon-home" aria-hidden="true"></span>&nbsp;	Home <small> &nbsp;Know More About Us</small></h1>
             </div>
+			
+			
+			
+			
+			
+			
             <div class="col-md-2" >
+			
             
             <div class="btn-group " role="group" aria-label="mid_button">
- 				 
-				 <button type="button" class="btn btn-default" data-target="#myModal" data-toggle="modal"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp; LOGIN &nbsp; TO &nbsp;DASHBOARD</button>
- 				 
+				<ul> 				
+				<li><button type="button" class="btn btn-default" data-target="#myModal" data-toggle="modal"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp; LOGIN &nbsp; TO &nbsp;DASHBOARD</button></li>
+ 				 <li><a class ="btn btn-default btn-primary" style=" background-color:#e74c3c ; border-color:#c0392b; position: relative; left: 60px;" href="registerer.php?il=0">Register</a></li>
+				</ul> 
 </div>
             
             </div>
@@ -184,7 +192,7 @@ Chairman & Managing Director.</p><br><br>
       </div>
       <div class="modal-footer">
       
-      	<a class ="btn btn-default btn-primary" style=" background-color:#e74c3c ; border-color:#c0392b" href="registerer.php?il=0">Register</a>
+      	
 		
         <button  type="button" class="btn btn-default btn-primary" style=" background-color:#e74c3c ; border-color:#c0392b" data-target="#forgotpass" data-toggle="modal">Forgot Password</button>
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
